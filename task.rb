@@ -6,10 +6,10 @@ def length_of_longest_substring(input_string)
   input_string.chars.each_with_index do |str_val, index|
     if hash_map[str_val] && hash_map[str_val] > default_index
 	  default_index = index
-	end
-	hash_map[str_val] = index
-	next if result > (index - default_index)  
-	result = index - default_index 	
+    end
+    hash_map[str_val] = index
+    next if result > (index - default_index)  
+    result = index - default_index 	
   end
   puts "Output: #{result}"
 end
