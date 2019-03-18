@@ -8,13 +8,14 @@ def length_of_longest_substring(input_string)
 	  default_index = index
 	end
 	hash_map[str_val] = index
-	result = index - default_index
+	next if result > (index - default_index)  
+	result = index - default_index 	
   end
   puts "Output: #{result}"
 end
 
-#length_of_longest_substring('bbbbbbb')
-#length_of_longest_substring('pwwkew')
+length_of_longest_substring('abcabcbb')
+#length_of_longest_substring('pwwkewlo')
 
 def anograms(input_array_data)
   array = Array.new
