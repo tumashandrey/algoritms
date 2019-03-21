@@ -1,21 +1,18 @@
-def length_of_longest_substring(input_string)
-  result = 0
-  default_index = -1
-  hash_map = Hash.new
-
-  input_string.chars.each_with_index do |str_val, index|
-    if hash_map[str_val] && hash_map[str_val] > default_index
-      default_index = index
-    end
-    hash_map[str_val] = index
-    next if result > (index - default_index)  
-    result = index - default_index 	
-  end
-  puts "Output: #{result}"
+def length_of_longest_substring(input_string) 
+ result = Array.new
+ string = ''
+ input_string.chars.each do |value|
+  if string.include?(value)
+     result << string
+     string = value
+   else
+     string += value
+   end 
+ end
+ result << string
+ puts "Output: #{result.max{ |a, b| a.length <=> b.length }.size}"
 end
-
-length_of_longest_substring('abcabcbb')
-#length_of_longest_substring('pwwkewlo')
+length_of_longest_substring("pwwkew")
 
 def anograms(input_array_data)
   array = Array.new
