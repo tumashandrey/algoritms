@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def length_of_longest_substring(input_string)
   result = 0
   default_index = -1
@@ -19,10 +20,23 @@ def length_of_longest_substring(input_string)
 >>>>>>> c968f7947a820e01cc532421bd433314965ae5e0
   end
   puts "Output: #{result}"
+=======
+def length_of_longest_substring(input_string) 
+ result = Array.new
+ string = ''
+ input_string.chars.each do |value|
+  if string.include?(value)
+     result << string
+     string = value
+   else
+     string += value
+   end 
+ end
+ result << string
+ puts "Output: #{result.max{ |a, b| a.length <=> b.length }.size}"
+>>>>>>> 91e83764d1b95165207840d8980fba751a92fd75
 end
-
-length_of_longest_substring('abcabcbb')
-#length_of_longest_substring('pwwkewlo')
+length_of_longest_substring("pwwkew")
 
 def anograms(input_array_data)
   array = Array.new
